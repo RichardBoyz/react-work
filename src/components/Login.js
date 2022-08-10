@@ -37,7 +37,7 @@ const Login = () => {
           onChange={(e) => setUser(e.target.value)}
           value={user}
           required
-        ></input>
+        />
       </form>
     </>
   );
