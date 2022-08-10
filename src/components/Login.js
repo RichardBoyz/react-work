@@ -28,7 +28,16 @@ const Login = () => {
       </p>
       <h1>Sign In</h1>
       <form>
-  return <div>Login</div>;
+        <label htmlFor="username">Username:</label>
+        <input
+          type="text"
+          id="username"
+          ref={userRef}
+          autoComplete="off"
+          onChange={(e) => setUser(e.target.value)}
+          value={user}
+          required
+        ></input>
       </form>
     </div>
   );
