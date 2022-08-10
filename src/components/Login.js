@@ -18,7 +18,7 @@ const Login = () => {
   }, [user, password]);
 
   return (
-    <div>
+    <>
       <p
         ref={errRef}
         className={errorMessage ? "error-message" : "off-screen"}
@@ -28,7 +28,7 @@ const Login = () => {
       </p>
       <h1>Sign In</h1>
       <form>
-        <label htmlFor="username">Username:</label>
+        <label htmlFor="username">Username: </label>
         <input
           type="text"
           id="username"
@@ -39,7 +39,7 @@ const Login = () => {
           required
         ></input>
       </form>
-    </div>
+    </>
   );
 };
 
