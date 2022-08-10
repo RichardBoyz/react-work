@@ -17,7 +17,21 @@ const Login = () => {
     setErrorMessage("");
   }, [user, password]);
 
+  return (
+    <div>
+      <p
+        ref={errRef}
+        className={errorMessage ? "error-message" : "off-screen"}
+        aria-live="assertive"
+      >
+        {errorMessage}
+      </p>
+      <h1>Sign In</h1>
+      <form>
   return <div>Login</div>;
+      </form>
+    </div>
+  );
 };
 
 export default Login;
