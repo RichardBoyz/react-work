@@ -47,6 +47,13 @@ const Login = () => {
               value={password}
               required
             />
+            <button className="sign-in-button">登入</button>
+            <div className="to-sign-up">
+              阿是沒有帳號?
+              <span>
+                <a href="#">註冊在這bang</a>
+              </span>
+            </div>
       </form>
     </>
   );
