@@ -17,6 +17,15 @@ const Login = () => {
     setErrorMessage("");
   }, [user, password]);
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(user, password, success);
+    setUser("");
+    setPassword("");
+    setSuccess(true);
+    console.log(user, password, success);
+  };
+
   return (
     <>
       <p
