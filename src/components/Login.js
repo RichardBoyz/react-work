@@ -26,8 +26,8 @@ const Login = () => {
       >
         {errorMessage}
       </p>
-      <h1>Sign In</h1>
-      <form>
+          <h1>登入</h1>
+          <form className="form-layout" onSubmit={handleSubmit}>
         <label htmlFor="username">Username: </label>
         <input
           type="text"
