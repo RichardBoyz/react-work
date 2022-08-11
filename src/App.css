@@ -25,3 +25,47 @@
   height: 40px;
   padding-left: 15px;
 }
+
+.to-sign-up{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 15px;
+}
+
+.sign-in-button{
+  position:relative;
+  margin-top: 20px;
+  border-radius: 30px;
+  height: 50px;
+  border:unset;
+  background-color: #4b4b4b;
+  color:white;
+  font-size: 20pt;
+  cursor: pointer;
+  transition: all 0.3s;
+  overflow: hidden;
+}
+.sign-in-button::before{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  height: 0;
+  width: 0;
+  /* z-index: -1; */
+  background-color: rgba(109, 109, 109, 0.3);
+  transform-origin: right ;
+  transition: all 0.2s;
+  border-radius: 50%;
+}
+.sign-in-button:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+a{
+  color: #4b4b4b;
+  font-weight: bold;
+}
