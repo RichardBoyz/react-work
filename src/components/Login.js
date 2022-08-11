@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useContext } from "react";
 
 const Login = () => {
   const userRef = useRef();
@@ -28,25 +28,32 @@ const Login = () => {
 
   return (
     <>
-      <p
-        ref={errRef}
-        className={errorMessage ? "error-message" : "off-screen"}
-        aria-live="assertive"
-      >
-        {errorMessage}
-      </p>
+      {success ? (
+        <>
+          <p>登入成功</p>
+          <a href="#">返回登入</a>
+        </>
+      ) : (
+        <>
+          <p
+            ref={errRef}
+            className={errorMessage ? "error-message" : "off-screen"}
+            aria-live="assertive"
+          >
+            {errorMessage}
+          </p>
           <h1>登入</h1>
           <form className="form-layout" onSubmit={handleSubmit}>
-        <label htmlFor="username">Username: </label>
-        <input
-          type="text"
-          id="username"
-          ref={userRef}
-          autoComplete="off"
-          onChange={(e) => setUser(e.target.value)}
-          value={user}
-          required
-        />
+            <label htmlFor="username">Username: </label>
+            <input
+              type="text"
+              id="username"
+              ref={userRef}
+              autoComplete="off"
+              onChange={(e) => setUser(e.target.value)}
+              value={user}
+              required
+            />
             <label htmlFor="username">Password: </label>
             <input
               type="password"
@@ -63,7 +70,9 @@ const Login = () => {
                 <a href="#">註冊在這bang</a>
               </span>
             </div>
-      </form>
+          </form>
+        </>
+      )}
     </>
   );
 };
