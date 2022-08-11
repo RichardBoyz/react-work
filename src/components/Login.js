@@ -38,6 +38,15 @@ const Login = () => {
           value={user}
           required
         />
+            <label htmlFor="username">Password: </label>
+            <input
+              type="password"
+              id="password"
+              autoComplete="off"
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
+              required
+            />
       </form>
     </>
   );
