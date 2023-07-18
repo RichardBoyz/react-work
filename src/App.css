@@ -102,6 +102,7 @@ a{
 
 .big-button {
   margin: 15px;
+  position: relative;
   border-radius: 15px;
   height: 100px;
   min-width: 100px;
@@ -111,7 +112,36 @@ a{
   cursor: pointer;
   border: none;
   font-size: 32pt;
+  box-shadow: 0px 0px 8px 3px rgb(94, 94, 94);
+  
 }
+.big-button::before{
+  content: "";
+  border-radius: 15px;
+  position:absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 100%;
+  background-color: rgb(162, 174, 175);
+  transition: all 0.2s ease-in-out;
+  visibility: hidden;
+}
+.big-button:hover::before{
+  border-radius: 15px;
+  content: "";
+  width: 100%;
+  visibility: visible;
+}
+.button-text{
+  position: relative;
+  z-index: 1;
+  color:white;
+  transition: color 0.2s;
+}
+
+.big-button:hover .button-text{color:black;}
 
 .home-content{
   display: flex;
@@ -282,4 +312,30 @@ select:active{
 
 .input-remind-hint{
   white-space: pre-wrap;
+}
+
+.action-sheet__wrapper{
+  position:absolute;
+  display: flex;
+  background-color: rgba(59, 59, 59, 0.3);
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+.action-sheet__container{
+  display: flex;
+  flex-direction: column;
+  width: clamp(350px,50%,600px);
+  height: clamp(300px,40%,500px);
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 0 30px 1px rgb(31, 31, 31);
+  animation: slide-in .3s;
+}
+
+@keyframes slide-in{
+  0%{transform: translateY(10%);}
+  100%{transform: translateY(0);}
 }
