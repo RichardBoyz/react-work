@@ -5,7 +5,8 @@ import useAxiosProvide from "../hooks/userAxiosPrivate";
 const cookies = new Cookies();
 
 // const backendURL = "https://nest-work.herokuapp.com";
-const backendURL = "http://127.0.0.1:3000/";
+// const backendURL = "http://127.0.0.1:3000/";
+const backendURL = "https://nest-work.onrender.com/";
 
 const parseResponseData = (result) => {
   if (result.data) {
