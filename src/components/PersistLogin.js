@@ -9,10 +9,10 @@ const PersistLogin = () => {
   const refresh = useRefreshToken();
   const { auth } = useAuth();
   const [persist] = useLocalStorage("persist", false);
-  
+
   useEffect(() => {
     let isMounted = true;
-    console.log(auth);
+    // console.log(auth);
     const verifyRefreshToken = async () => {
       try {
         await refresh();
@@ -27,10 +27,10 @@ const PersistLogin = () => {
     return () => (isMounted = false);
   }, []);
 
-  useEffect(() => {
-    console.log(`isLoading: ${isLoading}`);
-    console.log(`accessToken: ${JSON.stringify(auth?.accessToken)}`);
-  }, [isLoading]);
+  // useEffect(() => {
+  //   console.log(`isLoading: ${isLoading}`);
+  //   console.log(`accessToken: ${JSON.stringify(auth?.accessToken)}`);
+  // }, [isLoading]);
 
   return (
     <>{!persist ? <Outlet /> : isLoading ? <p>Loading...</p> : <Outlet />}</>

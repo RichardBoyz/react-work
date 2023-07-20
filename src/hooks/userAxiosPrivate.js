@@ -11,7 +11,7 @@ const useAxiosProvide = () => {
     const requestIntercept = axioPrivate.interceptors.request.use(
       (config) => {
         if (!config.headers["Authorization"]) {
-          console.log(auth.accessToken);
+          // console.log(auth.accessToken);
           config.headers["Authorization"] = `Bearer ${auth?.accessToken}`;
         }
         return config;
@@ -30,7 +30,7 @@ const useAxiosProvide = () => {
         ) {
           prevRequest.sent = true;
           const newTokens = await refresh();
-          console.log(newTokens);
+          // console.log(newTokens);
           prevRequest.headers["Authorization"] = `Bearer ${newTokens}`;
 
           return axioPrivate(prevRequest);
